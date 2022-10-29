@@ -5,8 +5,6 @@ const picturesMarkup = createPictures(galleryItems);
 
 picturesContainer.insertAdjacentHTML('beforeend', picturesMarkup);
 
-picturesContainer.addEventListener('click', onPicturesContainerClick);
-
 
 function createPictures(pictures) {
     return pictures.map(({ preview, original, description }) => {
@@ -19,11 +17,5 @@ function createPictures(pictures) {
     
 // console.log(galleryItems);
 
-function onPicturesContainerClick(event) {
-    event.preventDefault();
-    
-    // if (event.target.nodeName !== "IMG") {
-    //     return;
-    // }
-    const lightbox = new SimpleLightbox('.gallery a', { captionsData: 'alt', captionDelay: 250 });
-}
+
+const lightbox = new SimpleLightbox('.gallery a', { captionsData: 'alt', captionDelay: 250 });
